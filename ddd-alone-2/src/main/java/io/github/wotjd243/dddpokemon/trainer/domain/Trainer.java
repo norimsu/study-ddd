@@ -1,14 +1,24 @@
 package io.github.wotjd243.dddpokemon.trainer.domain;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Trainer {
     private final static int START_LEVEL = 1;
     private final static int MAXIMUM_LEVEL = 30;
     private final static int BONUS_LEVEL = 11;
     private final static int DEFAULT_BONUS = 1;
 
+    @Id
     private String id;
     private int level;
+    @Embedded
     private Party party;
+
+    protected Trainer() {
+    }
 
     public Trainer(final String id) {
         this.id = id;

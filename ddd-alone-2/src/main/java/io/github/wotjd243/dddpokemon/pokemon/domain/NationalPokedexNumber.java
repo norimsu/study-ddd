@@ -17,7 +17,7 @@ public class NationalPokedexNumber {
         return new NationalPokedexNumber(number);
     }
 
-    int toInt() {
+    public int toInt() {
         return number;
     }
 

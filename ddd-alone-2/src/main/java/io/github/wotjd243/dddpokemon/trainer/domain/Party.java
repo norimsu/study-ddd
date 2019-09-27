@@ -1,11 +1,15 @@
 package io.github.wotjd243.dddpokemon.trainer.domain;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Embeddable
 public class Party {
     private static int MAXIMUM_NUMBER_TO_CARRY = 6;
 
+    @ElementCollection
     private List<PokemonCaught> party = new ArrayList<>();
 
     boolean add(final PokemonCaught pokemonCaught) {
